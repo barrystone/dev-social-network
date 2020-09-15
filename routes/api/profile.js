@@ -7,6 +7,7 @@ const { check, validationResult } = require("express-validator");
 
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
+const Post = require("../../models/Post");
 
 // @route   GET api/profile/me
 // @desc    Get current users profile
@@ -41,7 +42,7 @@ router.post(
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.arrat() });
+      return res.status(400).json({ errors: errors.array() });
     }
 
     const {
@@ -80,7 +81,7 @@ router.post(
     if (likedin) profileFields.social.likedin = likedin;
     if (instagram) profileFields.social.instagram = instagram;
 
-    res.send("Hello");
+    // res.send("Hello");
 
     try {
       let profile = await Profile.findOne({ user: req.user.id });
@@ -148,11 +149,10 @@ router.get("/user/:user_id", async (req, res) => {
 // @access  Private
 router.delete("/", auth, async (req, res) => {
   try {
-    // @todo - remove users posts
-
+    // Remove user posts
+    await Post.deleteMany({ user: req.user.id });
     // Remmove profile
     await Profile.findOneAndRemove({ user: req.user.id });
-
     // Remove user
     await User.findOneAndRemove({ _id: req.user.id });
 
