@@ -1,6 +1,15 @@
-9.dashboard 9.delete 7:50
+11
 
 
-// finded bugs
+// found bugs
 
 in components CreateProfile.js hasn't deleteAccount
+
+in components EditProfile.js set data to [nothing] data won't changed
+
+// own fix
+
+set Profile.js adress to profile/user/:id (video profile/:id)
+
+set repos.map key [repo._id -> index] in ProfileGithub.js component 
+clsss to className
