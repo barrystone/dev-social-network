@@ -1,4 +1,4 @@
-11
+12
 
 
 // found bugs
@@ -7,9 +7,21 @@ in components CreateProfile.js hasn't deleteAccount
 
 in components EditProfile.js set data to [nothing] data won't changed
 
+fixed !! in components PostItem.js like the post or unlike interface won't changed immediately(should reload page)
+, but video(11 3 8:17) did.
+
 // own fix
 
 set Profile.js adress to profile/user/:id (video profile/:id)
 
 set repos.map key [repo._id -> index] in ProfileGithub.js component 
 clsss to className
+
+// confuse
+
+in video 11 3 4:46,I don't know how it works (redux, and backend api with post action UPDATE_LIKES).
+may too much load for this object!?? because when it update, all of posts object execute. may i wrong? 
+
+// enhance learning
+
+each component shoud use props or redux-state for the sitaution ?
