@@ -1,0 +1,6 @@
+{
+  "mongoURL": "mongodb+srv://barry:barrystone@devconnector.o0hi3.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtSecret": "myfavoriateplayerisjamesharden",
+  "githubClientId": "fcbc1cb55d13562aeb9f",
+  "githubSecret": "813ca7c3ea25b8c0a0d68f13a8705975f5ee9cd9"
+}
